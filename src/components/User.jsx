@@ -23,7 +23,6 @@ const User = () => {
 
 	if (loading) return <p>Loading...</p>;
 	if (error) return <p>Error :(</p>;
-	// console.log(data);
 	return data.users.map((user) => (
 		<div key={user.id}>
 			<h3>{user.name}</h3>
