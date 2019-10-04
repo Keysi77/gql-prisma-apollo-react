@@ -17,6 +17,7 @@ const GET_USERS = gql`
 	}
 `;
 
+
 // * render
 const User = () => {
 	const { loading, error, data } = useQuery(GET_USERS);
