@@ -1,26 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ApolloBoost from 'apollo-boost';
+import User from './components/User';
+import { ApolloProvider } from '@apollo/react-hooks';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const client = new ApolloBoost({
+	uri: 'http://localhost:4000/'
+});
+
+const App = () => (
+	<ApolloProvider client={client}>
+		<User />
+	</ApolloProvider>
+);
 
 export default App;
